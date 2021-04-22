@@ -1,0 +1,10 @@
+FROM python:3.9
+EXPOSE 5001
+WORKDIR /app
+COPY ./requirements.txt /app
+RUN pip install -r requirements.txt
+COPY api /app
+RUN ls -la
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.5.1/wait /wait
+RUN chmod +x /wait
+CMD /wait && python api.py

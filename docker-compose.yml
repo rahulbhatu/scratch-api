@@ -1,0 +1,25 @@
+version: "2"
+services: 
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypass
+      MYSQL_DATABASE: userdata
+      MYSQL_ROOT_PASSWORD: root
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    ports:
+      - "5001:5001"
+    environment:
+      WAIT_HOSTS: db:3306    
+    depends_on:
+      - db
+    links:
+      - db
