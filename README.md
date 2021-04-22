@@ -7,7 +7,10 @@ As per specifications this API code will work across various systems (Unix- and 
 # Test the code
 **Prerequisite** : To the test the code on any system you will have to install the
 docker and docker-compose tool on the system.
+
 API development tool like Postman to test the endpoints.
+
+
 Clone this repo and from the root of the repository run below command
 `docker-compose up -d`
 This will create two conatiners one app and other db
