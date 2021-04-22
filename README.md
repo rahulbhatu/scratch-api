@@ -17,7 +17,7 @@ This will create two conatiners one app and other db
 if you can see two containers on execution of executing `docker ps` then
 we can now test the API code.
 
-Below are the example endpoints that can be user
+Below are the example endpoints that can be used
 ### get all users
 curl --location --request GET 'http://localhost:5001/api/v1/users' \
 --data-raw ''
